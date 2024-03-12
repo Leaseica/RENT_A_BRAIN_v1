@@ -5,7 +5,7 @@
     <% @brains.each do |brain| %>
       <div class="col-md-4">
         <div class="card mb-4">
-          <%= image_tag brain.photo, alt: "Photo de #{brain.title}", class: "card-img-top" %>
+          <%= cl_image_tag brain.photo.key, alt: "Photo de #{brain.title}", class: "card-img-top" %>
           <div class="card-body">
             <h5 class="card-title"><%= brain.title %></h5>
             <p class="card-text"><strong>Spécialité :</strong> <%= brain.specialty %></p>
