@@ -1,0 +1,21 @@
+<h1>Liste des cerveaux</h1>
+
+<div class="container">
+  <div class="row">
+    <% @brains.each do |brain| %>
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <%= cl_image_tag brain.photo.key, alt: "Photo de #{brain.title}", class: "card-img-top" %>
+          <div class="card-body">
+            <h5 class="card-title"><%= brain.title %></h5>
+            <p class="card-text"><strong>Spécialité :</strong> <%= brain.specialty %></p>
+            <p class="card-text"><strong>Description :</strong> <%= brain.description %></p>
+            <p class="card-text"><strong>Adresse :</strong> <%= brain.address %></p>
+            <p class="card-text"><strong>Prix :</strong> <%= brain.price %> €/par jour</p>
+            <p class="card-text"><strong>Wiki :</strong> <a href="<%= brain.wiki_page %>">Voir sur Wikipedia</a></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

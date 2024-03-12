@@ -23,5 +23,7 @@ Rails.application.routes.draw do
 
   # # Notifications route for the current user
   # get '/users/notifications', to: 'users#index', as: 'user_notifications'
+  resources :users, only: [:show]
 
+  get "profile", to: "users#profile"
 end

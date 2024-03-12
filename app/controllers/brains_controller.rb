@@ -1,8 +1,11 @@
 class BrainsController < ApplicationController
+  def index
+    @brains = Brain.all
+  end
 
   def show
     id = params[:id]
-    @brain = Brain.find(params[:id])
+    @brain = Brain.find(id)
   end
 
   def new
@@ -11,7 +14,8 @@ class BrainsController < ApplicationController
 
   def create
     @brain = Brain.new(brain_params)
-    if @brain.save
+    @brain.user_id = current_user.id
+    if @brain.save!
       redirect_to brains_path
     else
       render :new, status: :unprocessable_entity

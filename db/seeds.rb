@@ -7,7 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-
+require "open-uri"
 # Création des users
 Reservation.destroy_all
 Brain.destroy_all
@@ -20,61 +20,69 @@ user_2 = User.create(first_name: 'Jane', last_name: 'Doe', email: 'jane@test.com
 
 user_3 = User.create(first_name: 'Me', last_name: 'Nala', email: 'martine@test.com', password: '123456')
 
+
 # Création des cerveaux (brains)
-Brain.create(
+brain_1 = Brain.new(
   specialty: 'Physique théorique',
   address: '123 Main St',
-  photo: 'brain1.jpg',
   title: 'Albert Einstein',
   description: "Albert Einstein était un physicien théoricien dont la théorie de la relativité a transformé notre compréhension de l'espace, du temps et de la gravité, tout en lui valant le prix Nobel de physique en 1921. Ses contributions ont également été cruciales pour le développement de la physique quantique et la compréhension des phénomènes atomiques.",
   wiki_page: 'https://fr.wikipedia.org/wiki/Albert_Einstein',
   price: 100,
   user: user_1
 )
+brain_1.photo.attach(io: File.open("app/assets/images/brain1.jpg"), filename: "brain1.jpg")
+brain_1.save!
 
-Brain.create(
+
+brain_2 = Brain.new(
   specialty: 'Physique nucléaire',
   address: '456 Elm St',
-  photo: 'brain2.jpg',
   title: 'Marie Curie',
   description: "Marie Curie, pionnière de la recherche sur la radioactivité, fut la seule personne à avoir obtenu des prix Nobel dans deux domaines scientifiques distincts. Son travail révolutionnaire a ouvert la voie à des avancées majeures en physique et en chimie.",
   wiki_page: 'https://fr.wikipedia.org/wiki/Marie_Curie',
   price: 150,
   user: user_1
 )
+brain_2.photo.attach(io: File.open("app/assets/images/brain2.jpg"), filename: "brain2.jpg")
+brain_2.save!
 
-Brain.create(
+brain_3 = Brain.new(
   specialty: 'Energie électrique',
   address: '789 Oak St',
-  photo: 'brain3.jpg',
   title: 'Nikola Tesla',
   description: "Nikola Tesla était un inventeur prolifique et visionnaire, connu pour ses contributions majeures au développement de la technologie électrique, notamment l'invention du courant alternatif (AC) et de la bobine Tesla. Son travail révolutionnaire dans le domaine de l'électromagnétisme a jeté les bases de nombreuses avancées technologiques modernes.",
   wiki_page: 'https://fr.wikipedia.org/wiki/Nikola_Tesla',
   price: 120,
   user: user_2
 )
+brain_3.photo.attach(io: File.open("app/assets/images/brain3.jpg"), filename: "brain3.jpg")
+brain_3.save!
 
-Brain.create(
+brain_4 = Brain.new(
   specialty: 'Informatique',
   address: '101 Pine St',
-  photo: 'brain4.jpg',
   title: 'Ada Lovelace',
   description: "Ada Lovelace, souvent considérée comme la première programmeuse au monde, a développé des algorithmes pour être exécutés par la machine analytique de Charles Babbage, préfigurant ainsi le concept de programmation informatique. Son travail novateur dans le domaine de l'informatique et son engagement envers la pensée analytique ont jeté les bases de l'ère numérique moderne',
   wiki_page: 'https://fr.wikipedia.org/wiki/Ada_Lovelace",
   price: 90,
   user: user_3
 )
+brain_4.photo.attach(io: File.open("app/assets/images/brain4.jpg"), filename: "brain4.jpg")
+brain_4.save!
 
-Brain.create(
+brain_5 = Brain.new(
   specialty: 'Mathematiques',
   address: '222 Maple St',
-  photo: 'brain5.jpg',
   title: 'Katherine Johnson',
   description: "Katherine Johnson était une mathématicienne et physicienne dont les calculs précis ont été essentiels pour le succès des premières missions spatiales américaines, notamment le vol de John Glenn en orbite terrestre. Son travail à la NASA a contribué de manière significative à l'avancement de l'exploration spatiale et à la reconnaissance des contributions des femmes afro-américaines dans les sciences.",
   wiki_page: 'https://fr.wikipedia.org/wiki/Katherine_Johnson',
   price: 110,
   user: user_3
 )
+brain_5.photo.attach(io: File.open("app/assets/images/brain5.jpg"), filename: "brain5.jpg")
+brain_5.save!
+
 
 # Création des réservations
 Reservation.create(
