@@ -22,7 +22,7 @@ user_3 = User.create(first_name: 'Me', last_name: 'Nala', email: 'martine@test.c
 
 
 # Création des cerveaux (brains)
-Brain.create(
+brain_1 = Brain.new(
   specialty: 'Physique théorique',
   address: '123 Main St',
   title: 'Albert Einstein',
@@ -31,13 +31,11 @@ Brain.create(
   price: 100,
   user: user_1
 )
-file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg")
-Brain.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-Brain.save!
-puts "open uri"
+brain_1.photo.attach(io: File.open("app/assets/images/brain1.jpg"), filename: "brain1.jpg")
+brain_1.save!
 
 
-Brain.create(
+brain_2 = Brain.new(
   specialty: 'Physique nucléaire',
   address: '456 Elm St',
   title: 'Marie Curie',
@@ -46,8 +44,10 @@ Brain.create(
   price: 150,
   user: user_1
 )
+brain_2.photo.attach(io: File.open("app/assets/images/brain2.jpg"), filename: "brain2.jpg")
+brain_2.save!
 
-Brain.create(
+brain_3 = Brain.new(
   specialty: 'Energie électrique',
   address: '789 Oak St',
   title: 'Nikola Tesla',
@@ -56,8 +56,10 @@ Brain.create(
   price: 120,
   user: user_2
 )
+brain_3.photo.attach(io: File.open("app/assets/images/brain3.jpg"), filename: "brain3.jpg")
+brain_3.save!
 
-Brain.create(
+brain_4 = Brain.new(
   specialty: 'Informatique',
   address: '101 Pine St',
   title: 'Ada Lovelace',
@@ -66,8 +68,10 @@ Brain.create(
   price: 90,
   user: user_3
 )
+brain_4.photo.attach(io: File.open("app/assets/images/brain4.jpg"), filename: "brain4.jpg")
+brain_4.save!
 
-Brain.create(
+brain_5 = Brain.new(
   specialty: 'Mathematiques',
   address: '222 Maple St',
   title: 'Katherine Johnson',
@@ -76,6 +80,8 @@ Brain.create(
   price: 110,
   user: user_3
 )
+brain_5.photo.attach(io: File.open("app/assets/images/brain5.jpg"), filename: "brain5.jpg")
+brain_5.save!
 
 
 # Création des réservations
