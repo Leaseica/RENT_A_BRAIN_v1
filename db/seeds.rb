@@ -7,7 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-
+require "open-uri"
 # Création des users
 Reservation.destroy_all
 Brain.destroy_all
@@ -19,6 +19,7 @@ user_1 = User.create(first_name: 'John', last_name: 'Doe', email: 'john@test.com
 user_2 = User.create(first_name: 'Jane', last_name: 'Doe', email: 'jane@test.com', password: '123456')
 
 user_3 = User.create(first_name: 'Me', last_name: 'Nala', email: 'martine@test.com', password: '123456')
+
 
 # Création des cerveaux (brains)
 brain_1 = Brain.new(
@@ -32,6 +33,7 @@ brain_1 = Brain.new(
 )
 brain_1.photo.attach(io: File.open("app/assets/images/brain1.jpg"), filename: "brain1.jpg")
 brain_1.save!
+
 
 brain_2 = Brain.new(
   specialty: 'Physique nucléaire',
@@ -80,6 +82,7 @@ brain_5 = Brain.new(
 )
 brain_5.photo.attach(io: File.open("app/assets/images/brain5.jpg"), filename: "brain5.jpg")
 brain_5.save!
+
 
 # Création des réservations
 Reservation.create(
