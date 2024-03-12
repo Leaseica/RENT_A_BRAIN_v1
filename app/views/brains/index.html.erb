@@ -1,0 +1,15 @@
+<h1>Liste des cerveaux</h1>
+
+<ul>
+  <% @brains.each do |brain| %>
+    <li>
+      <img src="<%= brain.photo %>" alt="Photo de <%= brain.title %>">
+      <strong>Titre :</strong> <%= brain.title %><br>
+      <strong>Spécialité :</strong> <%= brain.specialty %><br>
+      <strong>Description :</strong> <%= brain.description %><br>
+      <strong>Addresse :</strong> <%= brain.address %><br>
+      <strong>Prix :</strong> <%= brain.price %> €/par jour<br>
+      <strong>Wiki :</strong> <a href="<%= brain.wiki_page %>">Voir sur Wikipedia</a>
+    </li>
+  <% end %>
+</ul>
