@@ -14,7 +14,8 @@ class BrainsController < ApplicationController
 
   def create
     @brain = Brain.new(brain_params)
-    if @brain.save
+    @brain.user_id = current_user.id
+    if @brain.save!
       redirect_to brains_path
     else
       render :new, status: :unprocessable_entity
