@@ -5,7 +5,7 @@ class BrainsController < ApplicationController
 
   def show
     id = params[:id]
-    @brain = Brain.find(params[:id])
+    @brain = Brain.find(id)
   end
 
   def new
