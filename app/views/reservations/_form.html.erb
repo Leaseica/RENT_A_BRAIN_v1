@@ -1,0 +1,14 @@
+<%= simple_form_for [@brain, @reservation], html: { data: { controller: "datepicker", "datepicker-price-value": @brain.price } } do |f| %>
+  <%= f.input :start_date,
+              as: :date,
+              input_html: { data: { action: "datepicker#calculateCost", datepicker_target: "start" } } %>
+  <%= f.input :end_date,
+              as: :date,
+              input_html: { data: { action: "datepicker#calculateCost", datepicker_target: "end" } } %>
+  <%= f.input :cost, as: :integer %>
+  <%# <%= f.input :cost,
+              as: :integer,
+              input_html: { readonly: true, data: { datepicker_target: "cost" } } %>
+
+  <%= f.submit "Submit", class: "btn btn-primary" %>
+<% end %>
