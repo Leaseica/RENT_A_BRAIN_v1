@@ -83,6 +83,16 @@ brain_5 = Brain.new(
 brain_5.photo.attach(io: File.open("app/assets/images/brain5.jpg"), filename: "brain5.jpg")
 brain_5.save!
 
+brain_6 = Brain.new(
+  specialty: 'informatique',
+  address: 'Rådhuspladsen 1, 1553 København, Danemark',
+  title: 'David Heinemeier Hansson',
+  description: "David Heinemeier Hansson était un programmeur, il a développé le framework web Ruby on Rails. En 2005, il est récompensé hacker de l'année par Google et O'Reilly.",
+  price: 300,
+  user: user_1
+)
+brain_6.photo.attach(io: File.open("app/assets/images/David_Heinemeier_Hansson.jpg"), filename: "David_Heinemeier_Hansson.jpg")
+brain_6.save!
 
 # Création des réservations
 Reservation.create(
