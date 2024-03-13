@@ -10,11 +10,11 @@ Rails.application.routes.draw do
   # Brain resource routes
   resources :brains do
     # Nested route for new reservations under a specific brain
-    resources :reservations, only: [:new]
+    resources :reservations, only: [:new, :create]
   end
 
   # Reservation routes
-  resources :reservations, only: [:destroy, :edit, :update] do
+  resources :reservations, only: [:show, :destroy, :edit, :update] do
     member do
       patch :accept
       patch :decline

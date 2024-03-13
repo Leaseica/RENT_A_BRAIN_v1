@@ -15,10 +15,14 @@ class BrainsController < ApplicationController
   def create
     @brain = Brain.new(brain_params)
     @brain.user_id = current_user.id
-    if @brain.save!
-      redirect_to brains_path
-    else
-      render :new, status: :unprocessable_entity
+    respond_to do |format|
+      if @brain.save!
+        format.html { redirect_to brain_path(@brain) }
+        format.json
+      else
+        format.html { render "brains/new", status: :unprocessable_entity }
+        format.json
+      end
     end
   end
 
