@@ -32,6 +32,12 @@ class BrainsController < ApplicationController
     redirect_to brain_path(@brain)
   end
 
+  def destroy
+    @brain = Brain.find(params[:id])
+    @brain.destroy
+    redirect_to brains_path, status: :see_other
+  end
+
   private
 
   def brain_params
