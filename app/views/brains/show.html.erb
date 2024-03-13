@@ -1,5 +1,7 @@
 <div class="card-trip">
-  <%= cl_image_tag @brain.photo.key %>
+  <% if @brain.photo.attached? %>
+    <%= cl_image_tag @brain.photo.key %>
+  <% end %>
   <div class="card-trip-infos">
     <div>
       <h2><%= @brain.title %> - <%= @brain.specialty %></h2>

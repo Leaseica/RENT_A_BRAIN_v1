@@ -8,7 +8,9 @@
     <% @brains.each do |brain| %>
       <div class="col-md-4">
         <div class="card mb-4">
-          <%= cl_image_tag brain.photo.key, alt: "Photo de #{brain.title}", class: "card-img-top" %>
+          <% if brain.photo.attached. %>
+            <%= cl_image_tag brain.photo.key, alt: "Photo de #{brain.title}", class: "card-img-top" %>
+          <% end %>
           <%= link_to brain.title, brain_path(brain) %>
           <div class="card-body">
             <h5 class="card-title"><%= brain.title %></h5>
