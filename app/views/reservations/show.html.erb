@@ -9,9 +9,12 @@
     <p><strong>Description:</strong> <%= @reservation.brain.description %></p>
     <p><strong>Specialty:</strong> <%= @reservation.brain.specialty %></p>
     <p><strong>Address:</strong> <%= @reservation.brain.address %></p>
+    <p><strong>Status:</strong> <%= @reservation.status ? 'Accepted' : 'Pending' %></p>
     <% if @reservation.brain.wiki_page.present? %>
       <p><strong>Wiki Page:</strong> <%= link_to "View on Wikipedia", @reservation.brain.wiki_page, target: "_blank", rel: "noopener" %></p>
     <% end %>
   </div>
   <%= link_to 'Back to brain', brain_path(@reservation.brain), class: 'btn btn-secondary' %>
+  <%= button_to "Accept", accept_reservation_path(@reservation), method: :patch, class: 'btn btn-primary', data: { confirm: "Are you sure?" } %>
+
 </div>
