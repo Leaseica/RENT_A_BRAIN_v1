@@ -2,7 +2,7 @@
 
 <div id="reservations">
   <% @reservations.flatten.each do |reservation| %>
-    <%= button_to "Accept", accept_reservation_path(id: reservation), method: :patch%>
-    <%= button_to "Decline", decline_reservation_path(id: reservation), method: :patch%>
+    <%= button_to "Accept", accept_reservation_path(id: reservation), method: :patch %>
+    <%= button_to "Decline", decline_reservation_path(id: reservation), method: :patch %>
   <% end %>
 </div>
