@@ -8,9 +8,11 @@
       <p><%= link_to @brain.wiki_page, @brain.wiki_page %></p> <!-- Adjusted for clickable link -->
     </div>
     <h2 class="card-trip-pricing"><%= @brain.price %> €</h2>
-    <%= link_to "Back to the list", brains_path, class: "btn btn-secondary" %> <!-- Bootstrap class for styling -->
-    <%= link_to "Make a Reservation", new_brain_reservation_path(@brain), class: "btn btn-primary" %> <!-- Add reservation link -->
-    <h2><%= link_to "delete", brain_path(@brain), data:{turbo_method: :delete, turbo_confirm: "Are you sure ?" } %></h2>
-    <h2><%= link_to "update", edit_brain_path(@brain) %></h2>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <%= link_to "Back to the list", brains_path, class: "btn btn-secondary me-md-2", type: "button" %> <!-- Bootstrap class for styling -->
+      <%= link_to "Make a Reservation", new_brain_reservation_path(@brain), class: "btn btn-primary me-md-2", type: "button" %> <!-- Add reservation link -->
+      <%= link_to "Delete", brain_path(@brain), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-primary me-md-2", type: "button" %>
+      <%= link_to "Update", edit_brain_path(@brain), class: "btn btn-primary me-md-2", type: "button" %>
+    </div>
   </div>
 </div>
