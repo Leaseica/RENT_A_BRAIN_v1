@@ -19,7 +19,7 @@ user_1 = User.create(first_name: 'John', last_name: 'Doe', email: 'john@test.com
 user_2 = User.create(first_name: 'Jane', last_name: 'Doe', email: 'jane@test.com', password: '123456')
 
 user_3 = User.create(first_name: 'Me', last_name: 'Nala', email: 'martine@test.com', password: '123456')
-console log("hello")
+
 
 # Création des cerveaux (brains)
 brain_1 = Brain.new(
@@ -33,7 +33,7 @@ brain_1 = Brain.new(
 )
 brain_1.photo.attach(io: File.open("app/assets/images/brain1.jpg"), filename: "brain1.jpg")
 brain_1.save!
-console log("hello")
+
 
 brain_2 = Brain.new(
   specialty: 'Physique nucléaire',
@@ -46,7 +46,7 @@ brain_2 = Brain.new(
 )
 brain_2.photo.attach(io: File.open("app/assets/images/brain2.jpg"), filename: "brain2.jpg")
 brain_2.save!
-console log("hello")
+
 brain_3 = Brain.new(
   specialty: 'Energie électrique',
   address: '789 Oak St',
@@ -58,7 +58,7 @@ brain_3 = Brain.new(
 )
 brain_3.photo.attach(io: File.open("app/assets/images/brain3.jpg"), filename: "brain3.jpg")
 brain_3.save!
-console log("hello")
+
 brain_4 = Brain.new(
   specialty: 'Informatique',
   address: '101 Pine St',
