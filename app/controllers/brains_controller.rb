@@ -26,10 +26,29 @@ class BrainsController < ApplicationController
     end
   end
 
+  def edit
+    @brain = Brain.find(params[:id])
+  end
+
+  def update
+    @brain = Brain.find(params[:id])
+    @brain.update(brain_params)
+    redirect_to brain_path(@brain)
+  end
+
+  def destroy
+    @brain = Brain.find(params[:id])
+    @brain.destroy
+    redirect_to brains_path, status: :see_other
+  end
+
   private
 
   def brain_params
     params.require(:brain).permit(:title, :specialty, :address, :photo, :description, :wiki_page, :price)
   end
+
+
+
 
 end

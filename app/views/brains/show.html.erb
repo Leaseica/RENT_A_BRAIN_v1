@@ -1,5 +1,5 @@
 <div class="card-trip">
-  <%= image_tag @brain.photo %>
+  <%= cl_image_tag @brain.photo.key %>
   <div class="card-trip-infos">
     <div>
       <h2><%= @brain.title %> - <%= @brain.specialty %></h2>
@@ -10,5 +10,7 @@
     <h2 class="card-trip-pricing"><%= @brain.price %> €</h2>
     <%= link_to "Back to the list", brains_path, class: "btn btn-secondary" %> <!-- Bootstrap class for styling -->
     <%= link_to "Make a Reservation", new_brain_reservation_path(@brain), class: "btn btn-primary" %> <!-- Add reservation link -->
+    <h2><%= link_to "delete", brain_path(@brain), data:{turbo_method: :delete, turbo_confirm: "Are you sure ?" } %></h2>
+    <h2><%= link_to "update", edit_brain_path(@brain) %></h2>
   </div>
 </div>
