@@ -1,5 +1,17 @@
 <div id="header">
   <div class="search">
+  <div class="row justify-content-center">
+  <div class="col-sm-8 my-3">
+    <%= form_with url: brains_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Type a keyword"
+        %>
+      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
   </div>
   <h1>Brains to rent</h1>
 </div>
@@ -28,182 +40,23 @@
 
 
 <div id="about" class="section">
-  <h3>Inspirations</h3>
-  <div class = "tab_bar">
-    <div class = "content_tab">
-      <h4>Physics<h4>
-      <p>blablabla</p>
-      <p>Cheap but efficient</p>
-      <p>at Père Lachaise</p>
-      <p>Beach destinations</p>
-      <p>Popular destinations</p>
-      <p>Unique Stays</p>
+<h3>Inspirations</h3>
+    <nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Physique</button>
+      <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Cheap mais efficace</button>
+      <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">at Père Lachaise</button>
+      <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Date avec une personne cultivée</button>
     </div>
+
+    </nav>
+  <div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">...</div>
+  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
+  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
   </div>
 </div>
-<!--<h1>Liste des cerveaux</h1>
 
-<div style="width: 100%; height: 100%; padding-top: 16px; padding-bottom: 96px; padding-left: 80px; padding-right: 80px; background: black; flex-direction: column; justify-content: flex-start; align-items: center; gap: 24px; display: inline-flex">
-  <div style="align-self: stretch; justify-content: center; align-items: center; gap: 24px; display: inline-flex">
-    <div style="width: 480.50px; padding-top: 0.58px; padding-bottom: 0.53px; padding-right: 258.50px; justify-content: flex-start; align-items: center; display: flex">
-      <div style="width: 222px; height: 72.89px; position: relative; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
-        <div style="width: 72.89px; height: 72.89px; padding-left: 11.40px; padding-right: 11.40px; justify-content: center; align-items: center; display: inline-flex">
-          <div style="width: 50.10px; height: 72.89px; background: white"></div>
-        </div>
-        <div style="color: white; font-size: 27.30px; font-family: Inter; font-weight: 900; word-wrap: break-word">rent a brain</div>
-      </div>
-    </div>
-    <div style="justify-content: flex-start; align-items: flex-start; gap: 32px; display: flex">
-      <div style="flex-direction: column; justify-content: flex-start; align-items: center; gap: 4px; display: inline-flex">
-        <div style="color: white; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 24px; word-wrap: break-word">Brains to rent</div>
-        <div style="width: 16px; height: 2px; background: white; border-radius: 100px"></div>
-      </div>
-      <div style="color: white; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">I have a brain to rent</div>
-    </div>
-    <div style="flex: 1 1 0; height: 32px; justify-content: flex-end; align-items: center; gap: 16px; display: flex">
-      <div style="color: white; font-size: 16px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">Notifications</div>
-      <div style="color: white; font-size: 16px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">Profile</div>
-      <div style="width: 32px; height: 32px; justify-content: center; align-items: center; display: flex">
-        <div style="width: 32px; height: 32px; background: #F3F4F6; border-radius: 1000px; overflow: hidden; justify-content: center; align-items: center; display: inline-flex">
-          <div style="width: 32px; height: 32px; position: relative">
-            <div style="width: 32px; height: 32px; left: 0px; top: 0px; position: absolute; background: #F3F4F6; border-radius: 9999px"></div>
-            <div style="width: 32px; height: 25.33px; left: 0px; top: 6.67px; position: absolute; background: #D1D5DB"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div style="padding-top: 15px; padding-bottom: 15px; flex-direction: column; justify-content: flex-start; align-items: center; gap: 10px; display: flex">
-    <div style="width: 848px; padding-top: 8px; padding-bottom: 8px; padding-left: 32px; padding-right: 8px; background: white; border-radius: 1000px; justify-content: flex-start; align-items: center; gap: 32px; display: inline-flex">
-      <div style="width: 193px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
-        <div style="width: 162px; color: black; font-size: 12px; font-family: Inter; font-weight: 600; line-height: 16px; word-wrap: break-word">Location</div>
-        <div style="color: #6B7280; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word">Where do you need it ?</div>
-      </div>
-      <div style="width: 32px; height: 0px; transform: rotate(90deg); transform-origin: 0 0; background: #6B7280; border: 1px #E5E7EB solid"></div>
-      <div style="flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
-        <div style="width: 162px; color: black; font-size: 12px; font-family: Inter; font-weight: 600; line-height: 16px; word-wrap: break-word">Check in</div>
-        <div style="color: #6B7280; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word">Add dates</div>
-      </div>
-      <div style="width: 32px; height: 0px; transform: rotate(90deg); transform-origin: 0 0; background: #6B7280; border: 1px #E5E7EB solid"></div>
-      <div style="flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
-        <div style="width: 162px; color: black; font-size: 12px; font-family: Inter; font-weight: 600; line-height: 16px; word-wrap: break-word">Check out</div>
-        <div style="color: #6B7280; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word">Add dates</div>
-      </div>
-      <div style="width: 32px; height: 0px; transform: rotate(90deg); transform-origin: 0 0; background: #6B7280; border: 1px #E5E7EB solid"></div>
-      <div style="flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
-        <div style="width: 162px; color: black; font-size: 12px; font-family: Inter; font-weight: 600; line-height: 16px; word-wrap: break-word">Specialities</div>
-        <div style="color: #6B7280; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word">Add specialities</div>
-      </div>
-      <div style="width: 48px; height: 48px; justify-content: flex-start; align-items: flex-start; display: flex">
-        <div style="flex: 1 1 0; align-self: stretch; padding: 8px; background: #DE3151; box-shadow: 0px 1px 2px rgba(31, 41, 55, 0.08); border-radius: 100px; justify-content: center; align-items: center; gap: 8px; display: flex">
-          <div style="width: 20px; height: 20px; position: relative">
-            <div style="width: 12.08px; height: 12.08px; left: 3.96px; top: 3.96px; position: absolute; border: 1.50px white solid"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div style="align-self: stretch; padding-top: 25px; padding-bottom: 25px; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
-    <div style="flex: 1 1 0; text-align: center; color: white; font-size: 36px; font-family: Inter; font-weight: 500; line-height: 44px; word-wrap: break-word">Brains to rent</div>
-  </div>
-  <div style="align-self: stretch; height: 578.96px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 48px; display: flex">
-    <div style="align-self: stretch; color: white; font-size: 36px; font-family: Inter; font-weight: 500; line-height: 44px; word-wrap: break-word">Top 3 recommanded</div>
-    <div style="align-self: stretch; justify-content: flex-start; align-items: flex-start; gap: 50px; display: inline-flex">
+<div id="footer">
 
-      <div style="flex: 1 1 0; box-shadow: 0px 1.1684588193893433px 5.842294216156006px -424.1505432128906px rgba(0, 0, 0, 0.19); border-radius: 5.84px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
-
-        <div style="width: 393.33px; height: 346px; position: relative; background: #DCDCDC">
-        <div style="width: 100%; height: 100%; background: #D9D9D9"></div>
-          <% @brains.each do |brain| %>
-            <% if brain.photo.attached? %>
-              <%= cl_image_tag brain.photo.key, alt: "Photo de #{brain.title}", class: "card-img-top" %>
-            <% end %>
-        </div>
-        <div style="align-self: stretch; height: 140.96px; padding: 20px; background: radial-gradient(48.10% 3.54% at 48.10% 1.96%, #D33753 0%, #D13660 53%, #C72D65 100%); border-top-left-radius: 11.96px; border-top-right-radius: 11.96px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 15px; display: flex">
-
-          <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 11.96px; display: flex">
-
-              <div style="color: white; font-size: 23.37px; font-family: Inter; font-weight: 600; word-wrap: break-word"><p><%= brain.title %></p></div>
-              <div style="justify-content: flex-start; align-items: center; gap: 10px; display: inline-flex">
-                <div style="justify-content: flex-start; align-items: center; gap: 10px; display: flex">
-                  <div style="color: white; font-size: 18.70px; font-family: Inter; font-weight: 600; word-wrap: break-word"><p>$<%= brain.price %></p></div>
-                  <div style="color: white; font-size: 17.53px; font-family: Inter; font-weight: 400; word-wrap: break-word">day</div>
-                </div>
-                <div style="width: 4.19px; height: 4.19px; background: white; border-radius: 9999px"></div>
-                <div style="color: white; font-size: 18.70px; font-family: Inter; font-weight: 400; word-wrap: break-word"><p><%= brain.specialty %></p></div>
-              </div>
-            </div>
-              <div style="justify-content: flex-start; align-items: center; gap: 10px; display: inline-flex">
-                <div style="color: white; font-size: 19px; font-family: Inter; font-weight: 600; word-wrap: break-word"><p>Address</p></div>
-                <div style="color: white; font-size: 16px; font-family: Inter; font-weight: 400; word-wrap: break-word"><p><%= brain.address %></p></div>
-            </div>
-          </div>
-        </div>
-      <div style="flex: 1 1 0; box-shadow: 0px 1.1684588193893433px 5.842294216156006px -424.1505432128906px rgba(0, 0, 0, 0.19); border-radius: 5.84px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
-<div style="width: 393.33px; height: 346px; position: relative; background: #DCDCDC"></div>
-<div style="align-self: stretch; height: 140.96px; padding: 20px; background: radial-gradient(48.10% 3.54% at 48.10% 1.96%, #D33753 0%, #D13660 53%, #C72D65 100%); border-top-left-radius: 11.96px; border-top-right-radius: 11.96px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 15px; display: flex">
-<div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 11.96px; display: flex">
-<div style="color: white; font-size: 23.37px; font-family: Inter; font-weight: 600; word-wrap: break-word">Marie Curie</div>
-<div style="justify-content: flex-start; align-items: center; gap: 10px; display: inline-flex">
-<div style="justify-content: flex-start; align-items: center; gap: 10px; display: flex">
-<div style="color: white; font-size: 18.70px; font-family: Inter; font-weight: 600; word-wrap: break-word">$350</div>
-<div style="color: white; font-size: 17.53px; font-family: Inter; font-weight: 400; word-wrap: break-word">day</div>
 </div>
-<div style="width: 4.19px; height: 4.19px; background: white; border-radius: 9999px"></div>
-<div style="color: white; font-size: 18.70px; font-family: Inter; font-weight: 400; word-wrap: break-word">Nuclear Physics</div>
-</div>
-</div>
-<div style="justify-content: flex-start; align-items: center; gap: 10px; display: inline-flex">
-<div style="color: white; font-size: 19px; font-family: Inter; font-weight: 600; word-wrap: break-word">Address</div>
-<div style="color: white; font-size: 16px; font-family: Inter; font-weight: 400; word-wrap: break-word"> 456 Elm St</div>
-</div>
-</div>
-</div>
-<div style="flex: 1 1 0; box-shadow: 0px 1.1684588193893433px 5.842294216156006px -424.1505432128906px rgba(0, 0, 0, 0.19); border-radius: 5.84px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
-<div style="width: 393.33px; height: 346px; position: relative; background: #DCDCDC"></div>
-<div style="align-self: stretch; height: 140.96px; padding: 20px; background: radial-gradient(48.10% 3.54% at 48.10% 1.96%, #D33753 0%, #D13660 53%, #C72D65 100%); border-top-left-radius: 11.96px; border-top-right-radius: 11.96px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 15px; display: flex">
-<div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 11.96px; display: flex">
-<div style="color: white; font-size: 23.37px; font-family: Inter; font-weight: 600; word-wrap: break-word">Marie Curie</div>
-<div style="justify-content: flex-start; align-items: center; gap: 10px; display: inline-flex">
-<div style="justify-content: flex-start; align-items: center; gap: 10px; display: flex">
-<div style="color: white; font-size: 18.70px; font-family: Inter; font-weight: 600; word-wrap: break-word">$350</div>
-<div style="color: white; font-size: 17.53px; font-family: Inter; font-weight: 400; word-wrap: break-word">day</div>
-</div>
-<div style="width: 4.19px; height: 4.19px; background: white; border-radius: 9999px"></div>
-<div style="color: white; font-size: 18.70px; font-family: Inter; font-weight: 400; word-wrap: break-word">Nuclear Physics</div>
-</div>
-</div>
-<div style="justify-content: flex-start; align-items: center; gap: 10px; display: inline-flex">
-<div style="color: white; font-size: 19px; font-family: Inter; font-weight: 600; word-wrap: break-word">Address</div>
-<div style="color: white; font-size: 16px; font-family: Inter; font-weight: 400; word-wrap: break-word"> 456 Elm St</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<a class="btn btn-ghost" href="<%= new_brain_path %>">NEW</a>
-<h2>See all brains available</h2>
-<div class="container">
-  <div class="row">
-    <% @brains.each do |brain| %>
-      <div class="col-md-4">
-        <div class="card_brain" >
-          <% if brain.photo.attached? %>
-            <div class= "field_photo" ><%= cl_image_tag brain.photo.key, alt: "Photo de #{brain.title}", class: "card-img-top" %></div>
-          <% end %>
-          <%= link_to brain.title, brain_path(brain) %>
-          <div class="card_content" >
-            <h5 class="card_title"><%= brain.title %></h5>
-            <p class="card-text"><strong>Spécialité :</strong> <%= brain.specialty %></p>
-            <p class="card-text"><strong>Adresse :</strong> <%= brain.address %></p>
-            <p class="integer"><strong>Prix :</strong> <%= brain.price %> €/par jour</p>
-
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
-</div>
-<% end %>
--->
