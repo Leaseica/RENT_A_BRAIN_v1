@@ -96,19 +96,19 @@ brain_6.save!
 
 # Création des réservations
 Reservation.create(
-  brain_id: Brain.first,
-  user_id: user_2,
+  brain: Brain.first,
+  user: user_2,
   cost: 100,
   start_date: Date.today,
   end_date: Date.today,
-  status: true
+  status: false
 )
 
 Reservation.create(
-  brain_id: Brain.last,
-  user_id: user_1,
+  brain: Brain.last,
+  user: user_1,
   cost: 450,
   start_date: Date.today,
   end_date: Date.today + 2.days,
-  status: true
+  status: false
 )

@@ -1,5 +1,7 @@
 class ReservationsController < ApplicationController
 
+
+
   def show
     @reservation = Reservation.find(params[:id])
     @reservations = Reservation.where(brain_id: @reservation.brain_id)
@@ -31,12 +33,17 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.find(params[:id])
     @reservation.status = true # Or "accepted", if using a string
     if @reservation.save
-      redirect_to @reservation, notice: 'Reservation accepted successfully.'
+      redirect_to profile_path(current_user), notice: 'Reservation accepted successfully.'
     else
       render :show, status: :unprocessable_entity
     end
   end
 
+  def decline
+    @reservation = Reservation.find(params[:id])
+    @reservation.destroy
+    redirect_to profile_path(current_user)
+  end
 
   private
 
