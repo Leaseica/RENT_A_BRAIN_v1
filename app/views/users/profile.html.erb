@@ -1,8 +1,14 @@
 <h1><%= @user.first_name%> <%= @user.last_name %></h1>
 
+<ul>
+  <% @brains.each do |brain| %>
+    <li><%= cl_image_tag brain.photo.key, width: 50, height: 50, gravity: "face", crop: "thumb" %> <%= brain.title %></li>
+  <% end %>
+</ul>
+
 <div id="reservations">
   <% @reservations.flatten.each do |reservation| %>
-    <%= reservation.brain.title %>
+    <%= cl_image_tag reservation.brain.photo.key, width: 50, height: 50, gravity: "face", crop: "thumb" %> <%= reservation.brain.title %>
     <% if reservation.status == false %>
       <p>En attente</p>
       <%= button_to "Accepter", accept_reservation_path(id: reservation), method: :patch %>
