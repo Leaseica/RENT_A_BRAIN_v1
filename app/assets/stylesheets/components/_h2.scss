@@ -1,0 +1,12 @@
+.h2{
+  color: var(--black, #000);
+  text-align: center;
+
+  /* text-4xl/semi-bold */
+  font-family: Inter;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 44px; /* 122.222% */
+  flex: 1 0 0;
+}
