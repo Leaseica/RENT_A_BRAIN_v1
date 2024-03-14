@@ -11,16 +11,19 @@
 <h3>Demandes de location</h3>
 
 <div id="reservations">
-  <% @reservations.flatten.each do |reservation| %>
-    <%= cl_image_tag reservation.brain.photo.key, width: 50, height: 50, gravity: "face", crop: "thumb" %> <%= reservation.brain.title %>
-    <% if reservation.status == false %>
-      <p>En attente</p>
-      <%= button_to "Accepter", accept_reservation_path(id: reservation), method: :patch %>
-      <%= button_to "Refuser", decline_reservation_path(id: reservation), method: :patch %>
-    <% else %>
-      <p>Reservation acceptée</p>
+  <ul>
+    <% @reservations.flatten.each do |reservation| %>
+    <li><%= cl_image_tag reservation.brain.photo.key, width: 50, height: 50, gravity: "face", crop: "thumb" %> <%= reservation.brain.title %>
+      <% if reservation.status == false %>
+        <p>En attente</p>
+        <%= button_to "Accepter", accept_reservation_path(id: reservation), method: :patch %>
+        <%= button_to "Refuser", decline_reservation_path(id: reservation), method: :patch %>
+      <% else %>
+        <p>Reservation acceptée</p>
+      <% end %>
     <% end %>
-  <% end %>
+    </li>
+  </ul>
 </div>
 
 <h3>Mes réservations</h3>
