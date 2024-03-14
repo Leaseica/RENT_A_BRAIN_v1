@@ -15,6 +15,5 @@
     <% end %>
   </div>
   <%= link_to 'Back to brain', brain_path(@reservation.brain), class: 'btn btn-secondary' %>
-  <%= button_to "Accept", accept_reservation_path(@reservation), method: :patch, class: 'btn btn-primary', data: { confirm: "Are you sure?" } %>
 
 </div>
