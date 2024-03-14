@@ -4,5 +4,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :brains
-  has_many :reservations, through: :brains
+  has_many :reservations
 end
