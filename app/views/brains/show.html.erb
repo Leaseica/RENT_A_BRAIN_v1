@@ -7,6 +7,7 @@
       <h2><%= @brain.title %> - <%= @brain.specialty %></h2>
       <p><%= @brain.description %></p>
       <p><%= @brain.address %></p>
+      <p><%= link_to "#{@brain.user.first_name} #{@brain.user.last_name}", user_path(@brain.user) %></p>
       <p><%= link_to @brain.wiki_page, @brain.wiki_page %></p> <!-- Adjusted for clickable link -->
     </div>
     <h2 class="card-trip-pricing"><%= @brain.price %> €</h2>
