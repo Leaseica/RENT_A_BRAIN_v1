@@ -1,2 +1,156 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<body>
+  <div style="width: 100%; height: 100%; padding-left: 15px; padding-right: 15px; padding-top: 50px; padding-bottom: 50px; background: black; border-radius: 8px; overflow: hidden; justify-content: center; align-items: center; gap: 60px; display: inline-flex">
+    <div style="flex-direction: column; justify-content: center; align-items: center; gap: 35px; display: inline-flex">
+      <div style="flex-direction: row; justify-content: space-between; align-items: center; gap: 30px; display: flex">
+        <div style="height: 176.32px; padding-right: 37.27px; justify-content: flex-start; align-items: center; display: inline-flex">
+          <div style="width: 150 px; height: 176.60px; position: relative; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+            <div style="width: 176.32px; height: 176.32px; padding-left: 27.57px; padding-right: 27.57px; justify-content: center; align-items: center; display: inline-flex">
+              <div style="width: 121.18px; height: 176.32px; background: black">
+                <%= image_tag "logo_blanc.png", class: "logo" %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="color: white; font-size: 50.35px; font-family: Inter; font-weight: 700; word-wrap: break-word;">Need a brain?</div>
+      </div>
+      <div class="need-brain-container" style="padding-left: 80px; margin-top: 20px; text-align: left;">
+        <div class="into" style="width: 734px; height: 102px; color: white; font-size: 20px; font-family: Inter; font-weight: 500; line-height: 41.60px; word-wrap: break-word;">Parfois, même les génies ont besoin d'un coup de main. Besoin d'une idée géniale pour un projet ? Ou peut-être juste quelqu'un pour résoudre ce problème de maths épineux ? Louez un cerveau sur Rent-A-Brain et transformez votre quotidien en une véritable révolution intellectuelle !</div>
+      </div>
+      <div style="padding-left: 35.09px; padding-right: 35.09px; padding-top: 10px; padding-bottom: 10px; background: radial-gradient(48.10% 3.54% at 48.10% 1.96%, #D33753 0%, #D13660 53%, #C72D65 100%); border-radius: 11.70px; border: 2.34px rgba(0, 0, 0, 0.12) solid; justify-content: center; align-items: center; gap: 23.40px; display: inline-flex; margin-top: 40px;">
+        <%= link_to brains_path do %>
+          <div style="color: white; font-size: 32.75px; font-family: Inter; font-weight: 600; line-height: 37.43px; letter-spacing: 2.92px; word-wrap: break-word; text-decoration: none;">Yes Please !</div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div style="width: 100%; height: 100%; padding-top: 70px; padding-bottom: 96px; background: white; flex-direction: column; justify-content: flex-start; align-items: center; gap: 70px; display: inline-flex">
+    <div style="height: 50px; padding-left: 32px; padding-right: 32px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 45px; display: flex">
+        <div style="align-self: stretch; height: 93px; flex-direction: column; justify-content: flex-start; align-items: center; gap: 48px; display: flex">
+            <div class="expertise" style="height: 93px; flex-direction: column; justify-content: flex-start; align-items: center; gap: 20px; display: flex">
+                <div style="align-self: stretch; text-align: center; color: #101828; font-size: 40px; font-family: Inter; font-weight: 700; line-height: 42.05px; word-wrap: break-word">Débloquez le pouvoir de l'expertise</div>
+                <div class="harness" style="align-self: stretch; text-align: center; color: #667085; font-size: 20px; font-family: Inter; font-weight: 400; line-height: 30px; word-wrap: break-word">Tirez parti de la brillance dont vous avez besoin, quand vous en avez besoin.</div>
+            </div>
+        </div>
+<%#         <div style="align-self: stretch; text-align: center; color: #101828; font-size: 28.03px; font-family: Inter; font-weight: 400; line-height: 42.05px; word-wrap: break-word"></div> %>
+    </div>
+    <div style="height: 640px; padding-left: 32px; padding-right: 32px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 64px; display: flex">
+        <div style="align-self: stretch; justify-content: center; align-items: center; gap: 50px; display: inline-flex">
+            <div style="flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: center; gap: 35px; display: inline-flex">
+                <div style="width: 48px; height: 48px; padding: 12px; background: #F4EBFF; border-radius: 28px; border: 8px #F9F5FF solid; justify-content: center; align-items: center; display: inline-flex">
+                    <div style="width: 24px; height: 24px; position: relative; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+                        <div style="width: 20.90px; height: 18.23px"><%= image_tag "heart.jpg" %></div>
+                    </div>
+                </div>
+                <div style="align-self: stretch; height: 205px; flex-direction: column; justify-content: flex-start; align-items: center; gap: 15px; display: flex">
+                    <div style="align-self: stretch; text-align: center; color: #101828; font-size: 25px; font-family: Inter; font-weight: 600; line-height: 30px; word-wrap: break-word">Expertise Diversifiée</div>
+                    <div style="align-self: stretch; text-align: center; color: #475467; font-size: 20px; font-family: Inter; font-weight: 400; line-height: 40px; word-wrap: break-word">Plongez dans notre vaste bassin d'intellects provenant de différents domaines - science, technologie, ingénierie, arts et mathématiques. Nos cerveaux sont équipés d'années d'expérience, prêts à infuser vos projets d'idées et d'aperçus innovants.</div>
+                </div>
+            </div>
+            <div style="flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: center; gap: 35px; display: inline-flex">
+                <div style="width: 48px; height: 48px; padding: 12px; background: #F4EBFF; border-radius: 28px; border: 8px #F9F5FF solid; justify-content: center; align-items: center; display: inline-flex">
+                    <div style="width: 24px; height: 24px; position: relative; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+                        <div style="width: 20.90px; height: 18.23px"><%= image_tag "heart.jpg" %></div>
+                    </div>
+                </div>
+                <div style="align-self: stretch; height: 205px; flex-direction: column; justify-content: flex-start; align-items: center; gap: 15px; display: flex">
+                    <div style="align-self: stretch; text-align: center; color: #101828; font-size: 25px; font-family: Inter; font-weight: 600; line-height: 30px; word-wrap: break-word">Engagements Flexibles</div>
+                    <div style="align-self: stretch; text-align: center; color: #475467; font-size: 20px; font-family: Inter; font-weight: 400; line-height: 40px; word-wrap: break-word">Choisissez comment vous collaborez. Engagez-vous avec les principaux penseurs sur une base de projet, programmez des séances de remue-méninges, ou bénéficiez d'une consultation continue. Avec Rent a Brain, l'expertise intellectuelle est disponible selon vos conditions.</div>
+                </div>
+            </div>
+        </div>
+        <div style="align-self: stretch; justify-content: flex-start; align-items: flex-start; gap: 32px; display: inline-flex">
+            <div style="flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: center; gap: 35px; display: inline-flex">
+                <div style="width: 48px; height: 48px; padding: 12px; background: #F4EBFF; border-radius: 28px; border: 8px #F9F5FF solid; justify-content: center; align-items: center; display: inline-flex">
+                    <div style="width: 24px; height: 24px; position: relative; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+                        <div style="width: 20.90px; height: 18.23px"><%= image_tag "heart.jpg" %></div>
+                    </div>
+                </div>
+                <div style="align-self: stretch; height: 205px; flex-direction: column; justify-content: flex-start; align-items: center; gap: 15px; display: flex">
+                    <div style="align-self: stretch; text-align: center; color: #101828; font-size: 25px; font-family: Inter; font-weight: 600; line-height: 30px; word-wrap: break-word">Collaboration Fluide</div>
+                    <div style="align-self: stretch; text-align: center; color: #475467; font-size: 20px; font-family: Inter; font-weight: 400; line-height: 40px; word-wrap: break-word">Notre plateforme est conçue pour faciliter l'interaction fluide entre vous et l'expert que vous avez choisi. Avec des outils de communication intuitifs et des capacités de partage de ressources, la collaboration n'a jamais été aussi simple.</div>
+                </div>
+            </div>
+            <div style="flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: center; gap: 35px; display: inline-flex">
+                <div style="width: 48px; height: 48px; padding: 12px; background: #F4EBFF; border-radius: 28px; border: 8px #F9F5FF solid; justify-content: center; align-items: center; display: inline-flex">
+                    <div style="width: 24px; height: 24px; position: relative; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+                        <div style="width: 20.90px; height: 18.23px"><%= image_tag "heart.jpg" %></div>
+                    </div>
+                </div>
+                <div style="align-self: stretch; height: 165px; flex-direction: column; justify-content: flex-start; align-items: center; gap: 15px; display: flex">
+                    <div style="align-self: stretch; text-align: center; color: #101828; font-size: 25px; font-family: Inter; font-weight: 600; line-height: 30px; word-wrap: break-word">Interactions Sécurisées</div>
+                    <div style="align-self: stretch; text-align: center; color: #475467; font-size: 20px; font-family: Inter; font-weight: 400; line-height: 40px; word-wrap: break-word">Nous attachons de l'importance à votre vie privée et à la confidentialité de vos projets. Soyez assuré que toutes les interactions et les échanges sont protégés par des accords de confidentialité stricts et des canaux sécurisés.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="width: 100%; height: 100%; padding-top: 25px; padding-bottom: 70px; padding-left: 80px; padding-right: 80px; background: white; flex-direction: column; justify-content: center; align-items: center; gap: 43px; display: inline-flex">
+<div style="width: 1250px; height: 398.82px; padding-left: 32px; padding-right: 32px; padding-top: 40px; padding-bottom: 40px; background: #F9FAFB; box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.12); border-radius: 16px; flex-direction: column; justify-content: flex-start; align-items: center; gap: 32px; display: flex">
+<div style="align-self: stretch; height: 318.82px; flex-direction: column; justify-content: flex-start; align-items: center; gap: 28.03px; display: flex">
+<div style="align-self: stretch; height: 231px; flex-direction: column; justify-content: flex-start; align-items: center; gap: 28px; display: flex">
+<div style="align-self: stretch; text-align: center; color: #101828; font-size: 33.64px; font-family: Inter; font-weight: 700; line-height: 42.05px; word-wrap: break-word">Vous avez un brain à louer? </div>
+<div style="align-self: stretch; text-align: center; color: #101828; font-size: 28.03px; font-family: Inter; font-weight: 400; line-height: 42.05px; word-wrap: break-word">Pourquoi attendre que l'inspiration frappe ou que l'expertise se développe en interne lorsque vous pouvez louer un cerveau et accélérer votre progression dès maintenant ? Chez Rent a Brain, vos objectifs sont à portée de main. Faisons de la brillance un atout accessible et de votre succès inévitable.</div>
+</div>
+<%= link_to new_brain_path do %>
+<div style="padding-left: 24.59px; padding-right: 24.59px; padding-top: 16.40px; padding-bottom: 16.40px; background: radial-gradient(48.10% 3.54% at 48.10% 1.96%, #D33753 0%, #D13660 53%, #C72D65 100%); border-radius: 8.20px; border: 1.64px rgba(0, 0, 0, 0.12) solid; justify-content: center; align-items: center; gap: 16.40px; display: inline-flex">
+<div style="color: white; font-size: 22.95px; font-family: Inter; font-weight: 600; line-height: 26.23px; letter-spacing: 2.05px; word-wrap: break-word">Poster mon brain</div>
+<% end %>
+</div>
+</div>
+</div>
+</div>
+<div style="width: 100%; height: 100%; padding-top: 64px; padding-bottom: 24px; padding-left: 80px; padding-right: 80px; background: #F9FAFB; flex-direction: column; justify-content: center; align-items: center; gap: 48px; display: inline-flex">
+    <div style="width: 534.69px; height: 175.56px; justify-content: center; align-items: center; display: inline-flex">
+        <div style="width: 534.69px; height: 175.56px; position: relative; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+            <div style="width: 175.56px; height: 175.56px; padding-left: 27.45px; padding-right: 27.45px; justify-content: center; align-items: center; display: inline-flex">
+<%#                 <div style="width: 120.66px; height: 175.56px; background: black"></div> %>
+            </div>
+<%#             <div style="color: black; font-size: 65.74px; font-family: Inter; font-weight: 900; word-wrap: break-word">rent a brain</div> %>
+        </div>
+    </div>
+    <div style="align-self: stretch; height: 48px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 24px; display: flex">
+        <div style="align-self: stretch; height: 0px; border: 1px #E5E7EB solid"></div>
+        <div style="align-self: stretch; justify-content: space-between; align-items: center; display: inline-flex">
+            <div style="justify-content: flex-start; align-items: center; gap: 8px; display: flex">
+                <div style="color: #4B5563; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word">© 2022 RentABrain, Inc.</div>
+                <div style="width: 2px; height: 2px; background: #4B5563; border-radius: 9999px"></div>
+                <div style="color: #4B5563; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word">Privacy</div>
+                <div style="width: 2px; height: 2px; background: #4B5563; border-radius: 9999px"></div>
+                <div style="color: #4B5563; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word">Terms</div>
+                <div style="width: 2px; height: 2px; background: #4B5563; border-radius: 9999px"></div>
+                <div style="color: #4B5563; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word">Sitemap</div>
+            </div>
+            <div style="justify-content: flex-start; align-items: flex-start; gap: 40px; display: flex">
+                <div style="justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
+                    <div style="justify-content: flex-start; align-items: center; gap: 4px; display: flex">
+                        <div style="width: 24px; height: 24px; position: relative"><%= image_tag "globe.jpg" %>
+                            <div style="width: 14.50px; height: 14.50px; left: 4.75px; top: 4.75px; position: absolute; border: 1.50px #4B5563 solid"></div>
+                            <div style="width: 6.50px; height: 14.50px; left: 8.75px; top: 4.75px; position: absolute; border: 1.50px #4B5563 solid"></div>
+                            <div style="width: 14px; height: 0px; left: 5px; top: 12px; position: absolute; border: 1.50px #4B5563 solid"></div>
+                        </div>
+                        <div style="color: #4B5563; font-size: 14px; font-family: Inter; font-weight: 500; text-decoration: underline; line-height: 20px; word-wrap: break-word">English (US)</div>
+                    </div>
+                    <div style="justify-content: flex-start; align-items: center; gap: 4px; display: flex">
+                        <div style="width: 24px; height: 24px; position: relative"><%= image_tag "dollar.jpg" %>
+                            <div style="width: 10.50px; height: 10.50px; left: 6.75px; top: 6.75px; position: absolute; border: 1.50px #4B5563 solid"></div>
+                            <div style="width: 0px; height: 14.50px; left: 11.75px; top: 4.75px; position: absolute; border: 1.50px #4B5563 solid"></div>
+                        </div>
+                        <div style="color: #4B5563; font-size: 14px; font-family: Inter; font-weight: 500; text-decoration: underline; line-height: 20px; word-wrap: break-word">USD</div>
+                    </div>
+                </div>
+                <div style="justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
+                    <div style="width: 24px; height: 24px; position: relative">
+                      <div style="width: 15.49px; height: 13.63px; left: 4.75px; top: 5.68px; position: absolute"><%= image_tag "insta.jpg" %></div>
+                    </div>
+                    <div style="width: 24px; height: 24px; position: relative">
+                        <div style="width: 15.49px; height: 13.63px; left: 4.75px; top: 5.68px; position: absolute"><%= image_tag "facebook.jpg" %></div>
+                    </div>
+                    <div style="width: 24px; height: 24px; position: relative">
+                        <div style="width: 17.45px; height: 17.45px; left: 3.27px; top: 3.27px; position: absolute"><%= image_tag "twitter.jpg" %></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>

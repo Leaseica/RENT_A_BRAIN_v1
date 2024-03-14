@@ -1,14 +1,35 @@
 <h1><%= @user.first_name%> <%= @user.last_name %></h1>
 
-<div id="reservations">
-  <% @reservations.flatten.each do |reservation| %>
-    <%= reservation.brain.title %>
-    <% if reservation.status == false %>
-      <p>En attente</p>
-      <%= button_to "Accepter", accept_reservation_path(id: reservation), method: :patch %>
-      <%= button_to "Refuser", decline_reservation_path(id: reservation), method: :patch %>
-    <% else %>
-      <p>Reservation acceptée</p>
-    <% end %>
+<h3>Mes cerveaux</h3>
+
+<ul>
+  <% @brains.each do |brain| %>
+    <li><%= cl_image_tag brain.photo.key, width: 50, height: 50, gravity: "face", crop: "thumb" %> <%= brain.title %></li>
   <% end %>
+</ul>
+
+<h3>Demandes de location</h3>
+
+<div id="reservations">
+  <ul>
+    <% @reservations.flatten.each do |reservation| %>
+    <li><%= cl_image_tag reservation.brain.photo.key, width: 50, height: 50, gravity: "face", crop: "thumb" %> <%= reservation.brain.title %>
+      <% if reservation.status == false %>
+        <p>En attente</p>
+        <%= button_to "Accepter", accept_reservation_path(id: reservation), method: :patch %>
+        <%= button_to "Refuser", decline_reservation_path(id: reservation), method: :patch %>
+      <% else %>
+        <p>Reservation acceptée</p>
+      <% end %>
+    <% end %>
+    </li>
+  </ul>
 </div>
+
+<h3>Mes réservations</h3>
+
+<ul>
+  <% @my_reservations.each do |my_reservation| %>
+    <li><%= cl_image_tag my_reservation.brain.photo.key, width: 50, height: 50, gravity: "face", crop: "thumb" %> <%= my_reservation.brain.title %></li>
+  <% end %>
+</ul>
