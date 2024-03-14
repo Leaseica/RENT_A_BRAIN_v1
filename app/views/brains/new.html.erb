@@ -1,3 +1,5 @@
+<%= link_to "Back to the list", brains_path, class: "btn btn-primary me-md-2", type: "button" %>
+
 <div class="container mt-4">
   <div class="row">
     <div class="col-6 m-auto">
@@ -9,4 +11,27 @@
       </div>
     </div>
   </div>
+  <!-- Display brains the current user already has -->
+  <% if @brains.present? %>
+    <div class="row mt-5" data-controller="insert-in-list">
+      <h2>Your Brains</h2>
+      <% @brains.each do |brain| %>
+        <div class="col-md-4" data-insert-in-list-target="items">
+          <div class="card mb-4">
+            <%= cl_image_tag brain.photo.key, alt: "Photo of #{brain.title}", class: "card-img-top" %>
+            <div class="card-body">
+              <h5 class="card-title"><%= brain.title %></h5>
+              <p class="card-text"><strong>Specialty:</strong> <%= brain.specialty %></p>
+              <p class="card-text"><strong>Description:</strong> <%= brain.description %></p>
+              <p class="card-text"><strong>Address:</strong> <%= brain.address %></p>
+              <p class="card-text"><strong>Price:</strong> <%= brain.price %> €/per day</p>
+              <p class="card-text"><strong>Wiki:</strong> <a href="<%= brain.wiki_page %>">See on Wikipedia</a></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <p>No brains found.</p>
+  <% end %>
 </div>
