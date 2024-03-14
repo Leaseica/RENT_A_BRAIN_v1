@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @reservations = @user.reservations
   end
 
   def profile
@@ -14,5 +15,6 @@ class UsersController < ApplicationController
     @brains.each do |brain|
       @reservations << Reservation.where(brain: brain)
     end
+    @my_reservations = @user.reservations
   end
 end

@@ -1,0 +1,18 @@
+<div class="brain-card">
+  <div class="photo">
+    <% if brain.photo.attached? %>
+        <%= cl_image_tag brain.photo.key, alt: "Photo de #{brain.title}"%>
+    <% end %>
+  </div>
+  <div class="content">
+    <h2 class="title"><%= brain.title %></h2>
+    <h3 class="details">
+      <strong></strong> <%= brain.price %> € / jour
+      <span>•</span>
+      <%= brain.specialty %>
+    </h3>
+    <h3 class="address">
+      <strong>Adresse :</strong> <%= brain.address %>
+    </h3>
+    </div>
+</div>

@@ -1,1 +1,31 @@
-// Specific CSS for your home-page
+.need-brain {
+  color: white;
+  font-size: 40px;
+  font-family: Inter;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+.intro {
+  color: white;
+  font-size: 20px;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: 41.60px;
+  word-wrap: break-word;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.hover-red:hover {
+  color: #808bff;
+}
+
+a:hover {
+  font-size: 28px;
+  color: lightblue;
+}
+

@@ -111,4 +111,4 @@ Reservation.create(
   start_date: Date.today,
   end_date: Date.today + 2.days,
   status: false
-)
+  )
