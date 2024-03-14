@@ -1,10 +1,14 @@
 <h1><%= @user.first_name%> <%= @user.last_name %></h1>
 
+<h3>Mes cerveaux</h3>
+
 <ul>
   <% @brains.each do |brain| %>
     <li><%= cl_image_tag brain.photo.key, width: 50, height: 50, gravity: "face", crop: "thumb" %> <%= brain.title %></li>
   <% end %>
 </ul>
+
+<h3>Demandes de location</h3>
 
 <div id="reservations">
   <% @reservations.flatten.each do |reservation| %>
@@ -18,3 +22,11 @@
     <% end %>
   <% end %>
 </div>
+
+<h3>Mes réservations</h3>
+
+<ul>
+  <% @my_reservations.each do |my_reservation| %>
+    <li><%= cl_image_tag my_reservation.brain.photo.key, width: 50, height: 50, gravity: "face", crop: "thumb" %> <%= my_reservation.brain.title %></li>
+  <% end %>
+</ul>
