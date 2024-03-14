@@ -18,8 +18,6 @@ export default class extends Controller {
     const endDate = this.endTarget.value
     console.log(`Start Date: ${startDate}, End Date: ${endDate}`);
     if (startDate && endDate) {
-      const start = new Date(startDate)
-      const end = new Date(endDate)
       const diffTime = Math.abs(end - start)
       const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
 
