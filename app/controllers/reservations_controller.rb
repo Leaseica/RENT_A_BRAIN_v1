@@ -1,7 +1,5 @@
 class ReservationsController < ApplicationController
 
-
-
   def show
     @reservation = Reservation.find(params[:id])
     @reservations = Reservation.where(brain_id: @reservation.brain_id)
