@@ -85,12 +85,12 @@ brain_5.save!
 
 brain_6 = Brain.new(
   specialty: 'informatique',
-  address: '1553 København, DANEMARK',
+  address: '28 rue du Lavoir, 22650 Beaussais sur Mer, FRANCE',
   title: 'David Heinemeier Hansson',
   description: "David Heinemeier Hansson était un programmeur, il a développé le framework web Ruby on Rails. En 2005, il est récompensé hacker de l'année par Google et O'Reilly.",
   wiki_page: 'https://fr.wikipedia.org/wiki/David_Heinemeier_Hansson',
   price: 300,
-  user: user_1
+  user: user_3
 )
 brain_6.photo.attach(io: File.open("app/assets/images/David_Heinemeier_Hansson.jpg"), filename: "David_Heinemeier_Hansson.jpg")
 brain_6.save!
