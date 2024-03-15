@@ -11,7 +11,7 @@
 
   <div class="container-fluid main-container" style="background-color: black">
     <div class="row justify-content-center align-items-center gap-3">
-      <div class="col">
+      <div class="col" style="margin-top: 55px">
         <div class="card">
           <div class="card-header" style="background-color: black">
             <h1 class="card-title" style="color: white"><%= @brain.title %></h1>
@@ -29,7 +29,7 @@
                 <p class="card-text"><%= image_tag "brain.png", width:"3%"%> <%= @brain.specialty %></p>
                 <p class="card-text"><%= image_tag "home.png", width:"3%"%> <%= @brain.address %></p>
                 <p class="card-text"><strong></strong> <%= @brain.description %></p>
-                <a href="<%= @brain.wiki_page %>" class="btn btn-danger" style="color: white" target="_blank"><%= image_tag "wiki.png", width:"3%"%></a>
+                <a href="<%= @brain.wiki_page %>" class="btn btn-pink" style="color: white" target="_blank"><%= image_tag "wiki.png", width:"3%"%></a>
               </div>
             </div>
           </div>
