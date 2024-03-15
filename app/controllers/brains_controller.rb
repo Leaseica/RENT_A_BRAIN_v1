@@ -1,6 +1,9 @@
 class BrainsController < ApplicationController
   def index
     @brains = Brain.all
+      if params[:query].present?
+        @brains = @brains.where(specialty: params[:query])
+      end
   end
 
   def show

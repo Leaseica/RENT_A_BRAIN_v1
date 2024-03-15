@@ -1,0 +1,35 @@
+#footer {
+  padding-top: 48px;
+
+  .logo {
+    margin: auto;
+    display: block;
+  }
+
+  .infos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    /* #region */
+    color: var(--gray-600, #4B5563);
+    /* text-sm/Regular */
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+    padding: 48px 0px;
+
+    .trademarks {
+      a {
+        color: var(--gray-600, #4B5563);
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px; /* 142.857% */
+      }
+    }
+  }
+}
