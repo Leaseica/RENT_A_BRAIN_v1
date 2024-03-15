@@ -25,10 +25,21 @@
               </div>
               <div class="card-body">
                 <h5 class="card-title"><%= @brain.title %></h5>
-                <p class="card-text"><%= image_tag "euros.png", width:"3%"%> <%= @brain.price %> /jour</p>
-                <p class="card-text"><%= image_tag "brain.png", width:"3%"%> <%= @brain.specialty %></p>
-                <p class="card-text"><%= image_tag "home.png", width:"3%"%> <%= @brain.address %></p>
-                <p class="card-text"><strong></strong> <%= @brain.description %></p>
+                <div class="description" >
+                  <div class="left">
+                    <p class="card-text"><%= image_tag "euros.png", width:"3%"%> <%= @brain.price %> /jour</p>
+                    <p class="card-text"><%= image_tag "brain.png", width:"3%"%> <%= @brain.specialty %></p>
+                    <p class="card-text"><%= @brain.description %></p>
+                  </div>
+                  <div class="right">
+                    <p class="card-text"><%= image_tag "home.png", width:"3%"%> <%= @brain.address %></p>
+                    <div class="map"
+                      data-controller="map"
+                      data-map-markers-value="<%= @markers.to_json %>"
+                      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+                    </div>
+                  </div>
+                </div>
                 <a href="<%= @brain.wiki_page %>" style="color: black" target="_blank"><%= image_tag "wiki.png", width:"3%"%>  + d'infos</a>
               </div>
             </div>
@@ -43,10 +54,12 @@
           </div>
           <div class="card-body">
           <%= render "form", brain: @brain %>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
 
+    </div>
+
+    </div>
 </body>
 </html>
