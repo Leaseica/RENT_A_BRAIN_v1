@@ -1,35 +1,52 @@
-<h1><%= @user.first_name%> <%= @user.last_name %></h1>
+<div style="background-color: black; width: 100%; height: 100%; display: flex;">
+    <!-- Colonne de gauche -->
+    <div style="flex: 1; padding: 25px;">
+        <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 10px;">
+            <h3 style="color: white;">Demandes de réservation reçues</h3>
+            <div id="reservations" style="color: white;">
+                <ul>
+                    <% @reservations.flatten.each do |reservation| %>
+                        <li>
+                            <%= cl_image_tag reservation.brain.photo.key, color: "white", width: 50, height: 50, gravity: "face", crop: "thumb" %> <%= reservation.brain.title %>
+                            <% if reservation.status == false %>
+                                <p>En attente</p>
+                                <%= button_to "Accepter", accept_reservation_path(id: reservation), method: :patch %>
+                                <%= button_to "Refuser", decline_reservation_path(id: reservation), method: :patch %>
+                            <% else %>
+                                <p>Reservation acceptée</p>
+                            <% end %>
+                        </li>
+                    <% end %>
+                </ul>
+            </div>
 
-<h3>Mes Brains</h3>
 
-<ul>
-  <% @brains.each do |brain| %>
-    <li><%= cl_image_tag brain.photo.key, width: 50, height: 50, gravity: "face", crop: "thumb" %> <%= brain.title %></li>
-  <% end %>
-</ul>
+            <h3 style="color: white;">Demandes de réservation envoyées</h3>
+            <ul>
+                <% @my_reservations.each do |my_reservation| %>
+                    <li><%= cl_image_tag my_reservation.brain.photo.key, width: 50, height: 50, gravity: "face", crop: "thumb" %> <%= my_reservation.brain.title %></li>
+                <% end %>
+            </ul>
+        </div>
+    </div>
 
-<h3>Demandes de location</h3>
-
-<div id="reservations">
-  <ul>
-    <% @reservations.flatten.each do |reservation| %>
-    <li><%= cl_image_tag reservation.brain.photo.key, width: 50, height: 50, gravity: "face", crop: "thumb" %> <%= reservation.brain.title %>
-      <% if reservation.status == false %>
-        <p>En attente</p>
-        <%= button_to "Accepter", accept_reservation_path(id: reservation), method: :patch %>
-        <%= button_to "Refuser", decline_reservation_path(id: reservation), method: :patch %>
-      <% else %>
-        <p>Réservation acceptée</p>
-      <% end %>
-    <% end %>
-    </li>
-  </ul>
+    <!-- Colonne de droite -->
+    <div style="flex: 1; padding: 25px; background-color:black; color: white">
+        <div class="container">
+            <h2>Vos brains</h2>
+            <% if @brains.any? %>
+                <div class="cards">
+                    <% @brains.each do |brain| %>
+                        <%= link_to brain_path(brain) do %>
+                            <div class="grid-cell">
+                                <%= render "shared/brain_card", brain: brain %>
+                            </div>
+                        <% end %>
+                    <% end %>
+                </div>
+            <% else %>
+                <p class="no-result">Aucun résultat</p>
+            <% end %>
+        </div>
+    </div>
 </div>
-
-<h3>Mes réservations</h3>
-
-<ul>
-  <% @my_reservations.each do |my_reservation| %>
-    <li><%= cl_image_tag my_reservation.brain.photo.key, width: 50, height: 50, gravity: "face", crop: "thumb" %> <%= my_reservation.brain.title %></li>
-  <% end %>
-</ul>
