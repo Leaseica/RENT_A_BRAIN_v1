@@ -1,0 +1,37 @@
+.btn-pink{
+  display: flex;
+  padding: 0.625rem 0.9375rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 0.3125rem;
+  border: 1px solid var(--black-transparent, rgba(0, 0, 0, 0.12));
+  background: var(--Gradient-pink, radial-gradient(1413.54% 103.95% at -3.95% 100%, #D33753 0%, #D13660 52.83%, #C72D65 100%));
+  color: var(--white, #FFF);
+  font-family: Inter;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1rem; /* 114.286% */
+  letter-spacing: 0.07813rem;
+}
+
+.btn-white {
+  display: flex;
+  padding: 0.625rem 0.9375rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 0.3125rem;
+  border: 1px solid var(--black-transparent, rgba(0, 0, 0, 0.12));
+  font-family: Inter;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1rem; /* 114.286% */
+  letter-spacing: 0.07813rem;
+  background: var(--Gradient-pink, radial-gradient(1413.54% 103.95% at -3.95% 100%, #D33753 0%, #D13660 52.83%, #C72D65 100%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
