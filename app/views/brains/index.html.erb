@@ -5,21 +5,21 @@
         <%= text_field_tag :query,
           params[:query],
           class: "form-control",
-          placeholder: "Type a keyword",
+          placeholder: "Saisir une spécialité",
           id: "search-input"
         %>
-        <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+        <%= submit_tag "Rechercher", name: "", class: "btn btn-primary" %>
       <% end %>
     </div>
 
-      <h1>Brains to rent</h1>
+      <h1>Brains à louer</h1>
   </div>
 </div>
 
 <% if params[:query].blank? %>
   <div id="highlights" class="section">
     <div class="container">
-      <h2>Top 3 recommanded</h2>
+      <h2>Top 3 recommandés</h2>
         <div class="cards">
           <% @brains.first(3).each do |brain| %>
             <%= link_to brain_path(brain) do %>
@@ -36,7 +36,7 @@
 
 <div id="all" class="section">
   <div class="container">
-    <h2>See all brains available</h2>
+    <h2>Tous les Brains</h2>
     <% if @brains.any? %>
       <div class="cards">
         <% @brains.each do |brain| %>
@@ -52,6 +52,7 @@
     <% end %>
   </div>
 </div>
+
 
 
 <div id="footer">
