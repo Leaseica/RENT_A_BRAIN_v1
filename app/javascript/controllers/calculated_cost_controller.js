@@ -3,7 +3,7 @@
 import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
-  static targets = ["end", "start", "cost"]
+  static targets = ["end", "start", "cost", "days"]
   static values = { price: Number }
   connect() {
     this.calculateCost();
@@ -18,5 +18,6 @@ export default class extends Controller {
     const totalCost = this.priceValue * dayCount;
 
     this.costTarget.textContent = `${totalCost}`
+    this.daysTarget.textContent = `${dayCount}`
   }
 }

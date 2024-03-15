@@ -1,11 +1,35 @@
 
-<%= simple_form_for [@brain, @reservation],  { data: { controller: "calculated-cost", calculated_cost_price_value: @brain.price} } do |f| %>
+<%= simple_form_for [@brain, @reservation], { data: { controller: "calculated-cost", calculated_cost_price_value: @brain.price} } do |f| %>
   <div class="d-flex">
-    <%= f.input :start_date, as: :date, html5: true, input_html: { value: @reservation.start_date || Date.today, data: { calculated_cost_target: "start", controller: "flatpickr", action: "change->calculated-cost#calculateCost" } } %>
-    <%= f.input :end_date, as: :date, html5: true, input_html: { value: @reservation.end_date || Date.today, data: { controller: "flatpickr", calculated_cost_target: "end", action: "change->calculated-cost#calculateCost" } } %>
+    <%= f.input :start_date, as: :date, html5: true, input_html: { value: @reservation.start_date || Date.today,
+    data: { calculated_cost_target: "start",
+    controller: "flatpickr",
+    action: "change->calculated-cost#calculateCost" },
+    class: "input_date" } %>
+
+    <%= f.input :end_date, as: :date, html5: true, input_html: { value: @reservation.end_date || Date.today,
+    data: { controller: "flatpickr",
+    calculated_cost_target: "end",
+    action: "change->calculated-cost#calculateCost" },
+    class: "input_date" } %>
   </div>
   <div>
     <p>Total Cost: <span data-calculated-cost-target="cost"></span></p>
   </div>
   <%= f.button :submit, "Reserve", class: "btn-pink" %>
+  <div style="width: 100%; text-align: center; color: #6B7280; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word">You won’t be charged yet</div>
+  <div style="width: 100%; height: 100%; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 8px; display: inline-flex">
+    <div style="align-self: stretch; justify-content: flex-start; align-items: flex-start; gap: 16px; display: inline-flex">
+        <div style="flex: 1 1 0; color: black; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 24px; word-wrap: break-word"><%= @brain.price %> € x  <span data-calculated-cost-target="days"></span> days</div>
+        <div style="text-align: right; color: black; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 24px; word-wrap: break-word"><span data-calculated-cost-target="cost"></div>
+    </div>
+    <div style="align-self: stretch; justify-content: flex-start; align-items: flex-start; gap: 16px; display: inline-flex">
+        <div style="flex: 1 1 0; color: black; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 24px; word-wrap: break-word">Service fee</div>
+        <div style="text-align: right; color: black; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 24px; word-wrap: break-word">0€</div>
+    </div>
+    <div style="width: 100%; height: 100%; justify-content: flex-start; align-items: flex-start; gap: 16px; display: inline-flex">
+    <div style="flex: 1 1 0; color: black; font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">Total</div>
+    <div style="text-align: right; color: black; font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word"><span data-calculated-cost-target="cost"></div>
+</div>
+
 <% end %>

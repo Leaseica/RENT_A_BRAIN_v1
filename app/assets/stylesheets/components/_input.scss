@@ -1,0 +1,47 @@
+.input_date {
+  font-family: Inter;
+  display: flex;
+  padding: 0.5rem;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1 0 0;
+  border-radius: 0.3125rem 0rem 0rem 0.3125rem;
+  background: var(--white, #FFF);
+  box-shadow: -1px 0px 0px 0px #D1D5DB inset;
+
+  .content {
+    display: flex;
+    padding: 0.3125rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.3125rem;
+    flex: 1 0 0;
+
+    .title {
+      color: var(--black, #000);
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 1rem; /* 100% */
+      text-transform: uppercase;
+    }
+
+    .date_value {
+      color: var(--gray-500, #6B7280);
+      font-size: 0.875rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.25rem; /* 142.857% */
+    }
+  }
+
+  .svg_chevron {
+    display: flex;
+    padding: 0.8125rem 0.75rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+  }
+}
