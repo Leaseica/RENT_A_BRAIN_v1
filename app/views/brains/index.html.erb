@@ -1,14 +1,15 @@
 <div id="header">
   <div class="container" >
     <div class="search">
-        <%= form_with url: brains_path, method: :get, class: "d-flex" do %>
-          <%= text_field_tag :query,
-                params[:query],
-                class: "form-control",
-                placeholder: "Type a keyword"
-            %>
-          <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
-        <% end %>
+      <%= form_with url: brains_path, method: :get, class: "d-flex", id: "search-form" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Type a keyword",
+          id: "search-input"
+        %>
+        <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+      <% end %>
     </div>
 
       <h1>Brains to rent</h1>

@@ -2,8 +2,9 @@ class BrainsController < ApplicationController
   def index
     @brains = Brain.all
       if params[:query].present?
-        @brains = @brains.where(specialty: params[:query])
+        @brains = Brain.where("specialty ILIKE ?", "%#{params[:query]}%")
       end
+    
   end
 
   def show
