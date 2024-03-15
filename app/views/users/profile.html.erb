@@ -1,6 +1,6 @@
 <h1><%= @user.first_name%> <%= @user.last_name %></h1>
 
-<h3>Mes cerveaux</h3>
+<h3>Mes Brains</h3>
 
 <ul>
   <% @brains.each do |brain| %>
@@ -19,7 +19,7 @@
         <%= button_to "Accepter", accept_reservation_path(id: reservation), method: :patch %>
         <%= button_to "Refuser", decline_reservation_path(id: reservation), method: :patch %>
       <% else %>
-        <p>Reservation acceptée</p>
+        <p>Réservation acceptée</p>
       <% end %>
     <% end %>
     </li>

@@ -5,7 +5,7 @@
     <%= f.input :end_date, as: :date, html5: true, input_html: { value: @reservation.end_date || Date.today, data: { controller: "flatpickr", calculated_cost_target: "end", action: "change->calculated-cost#calculateCost" } } %>
   </div>
   <div>
-    <p>Total Cost: <span data-calculated-cost-target="cost"></span></p>
+    <p>Total: <span data-calculated-cost-target="cost"></span></p>
   </div>
   <%= f.button :submit, "Reserve", class: "btn-pink" %>
 <% end %>

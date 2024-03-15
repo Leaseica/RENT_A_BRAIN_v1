@@ -1,15 +1,15 @@
 <%# app/views/reservations/show.html.erb %>
 <div class="container">
-  <h1>Reservation Details</h1>
+  <h1>Détails de la réservation</h1>
   <div class="reservation-details">
-    <p><strong>Brain Title:</strong> <%= @reservation.brain.title %></p>
-    <p><strong>Start Date:</strong> <%= @reservation.start_date.strftime('%B %d, %Y') %></p>
-    <p><strong>End Date:</strong> <%= @reservation.end_date.strftime('%B %d, %Y') %></p>
-    <p><strong>Cost:</strong> <%= number_to_currency(@reservation.cost) %></p>
+    <p><strong>Nom du Brain:</strong> <%= @reservation.brain.title %></p>
+    <p><strong>Date de début:</strong> <%= @reservation.start_date.strftime('%B %d, %Y') %></p>
+    <p><strong>Date de fin:</strong> <%= @reservation.end_date.strftime('%B %d, %Y') %></p>
+    <p><strong>Prix:</strong> <%= number_to_currency(@reservation.cost) %></p>
     <p><strong>Description:</strong> <%= @reservation.brain.description %></p>
-    <p><strong>Specialty:</strong> <%= @reservation.brain.specialty %></p>
-    <p><strong>Address:</strong> <%= @reservation.brain.address %></p>
-    <p><strong>Status:</strong> <%= @reservation.status ? 'Accepted' : 'Pending' %></p>
+    <p><strong>Spécialité:</strong> <%= @reservation.brain.specialty %></p>
+    <p><strong>Addresse:</strong> <%= @reservation.brain.address %></p>
+    <p><strong>Statut:</strong> <%= @reservation.status ? 'Accepté' : 'En attente' %></p>
     <% if @reservation.brain.wiki_page.present? %>
     <div style="width: 100%; height: 100%; justify-content: flex-start; align-items: center; gap: 10px; display: inline-flex">
       <p><%= link_to "View on Wikipedia", @reservation.brain.wiki_page, target: "_blank", class: "btn-pink" %></p>
