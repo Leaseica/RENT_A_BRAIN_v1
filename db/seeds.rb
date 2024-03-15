@@ -106,7 +106,7 @@ Reservation.create(
 
 Reservation.create(
   brain: Brain.last,
-  user: user_1,
+  user: user_3,
   cost: 450,
   start_date: Date.today,
   end_date: Date.today + 2.days,
