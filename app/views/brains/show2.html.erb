@@ -1,0 +1,21 @@
+<div class="card-trip">
+  <% if @brain.photo.attached? %>
+    <%= cl_image_tag @brain.photo.key %>
+  <% end %>
+  <div class="card-trip-infos">
+    <div>
+      <h2><%= @brain.title %> - <%= @brain.specialty %></h2>
+      <p><%= @brain.description %></p>
+      <p><%= @brain.address %></p>
+      <p><%= link_to "#{@brain.user.first_name} #{@brain.user.last_name}", user_path(@brain.user) %></p>
+      <p><%= link_to @brain.wiki_page, @brain.wiki_page %></p>
+    </div>
+    <h2 class="card-trip-pricing"><%= @brain.price %> €</h2>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <%= link_to "Back to the list", brains_path, class: "btn btn-secondary me-md-2", type: "button" %>
+      <%= link_to "Make a Reservation", new_brain_reservation_path(@brain), class: "btn btn-primary me-md-2", type: "button" %> 
+      <%= link_to "Delete", brain_path(@brain), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-primary me-md-2", type: "button" %>
+      <%= link_to "Update", edit_brain_path(@brain), class: "btn btn-primary me-md-2", type: "button" %>
+    </div>
+  </div>
+</div>
