@@ -5,6 +5,12 @@ class BrainsController < ApplicationController
         @brains = Brain.where("specialty ILIKE ?", "%#{params[:query]}%")
       end
 
+    @markers = @brains.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
   end
 
   def show
