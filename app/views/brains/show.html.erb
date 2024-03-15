@@ -47,15 +47,30 @@
         </div>
       </div>
 
-      <div class="col" style="padding-top: 30px">
-        <div class="card">
-          <div class="card-header" style="background-color: black">
-            <h1 class="card-title" style="color: white">Faire une réservation</h1>
+      <% unless current_user == @brain.user %>
+        <div class="col" style="padding-top: 30px">
+          <div class="card">
+            <div class="card-header" style="background-color: black">
+              <h1 class="card-title" style="color: white">Faire une réservation</h1>
+            </div>
+            <div class="body_card_reservation">
+              <%= render "reservations/form", reservation: @reservation, brain: @brain %>
+            </div>
           </div>
-          <div class="card-body">
-          <%= render "reservations/form", reservation: @reservation, brain: @brain %>
+          <div style="width: 100%; text-align: center; color: white; font-size: 18px; font-family: Inter; font-weight: 500; line-height: 30px; word-wrap: break-word">Safeguarded Interactions</div>
+          <div style="width: 100%; text-align: center; color: white; font-size: 14px; font-family: Inter; font-weight: 300; line-height: 18px; word-wrap: break-word">We value your privacy and the confidentiality of your projects. Rest assured, all interactions and exchanges are protected under strict NDAs and secure channels.</div>
         </div>
-      </div>
+
+      <% end %>
+      <% if current_user == @brain.user%>
+        <div class="col" style="padding-top: 30px">
+          <div class="row" style="padding-right: 60px">
+              <%= link_to "Voir tous mes brains", profile_path, class: "nav-link text-white" %>
+              <%= link_to "Update", edit_brain_path(@brain), class: "btn btn-primary me-md-2", type: "button" %>
+             <%= link_to "Delete", brain_path(@brain), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger me-md-2", type: "button" %>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </body>
