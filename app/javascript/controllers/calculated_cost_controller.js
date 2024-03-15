@@ -16,8 +16,9 @@ export default class extends Controller {
 
     const dayCount = ((endDate - startDate) / (1000 * 60 * 60 * 24)) + 1; ;
     const totalCost = this.priceValue * dayCount;
-
-    this.costTarget.textContent = `${totalCost}`
+    this.costTargets.forEach((el) => {
+      el.textContent = `${totalCost.toFixed(2)} €`;
+    });
     this.daysTarget.textContent = `${dayCount}`
   }
 }

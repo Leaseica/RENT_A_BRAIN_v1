@@ -9,54 +9,70 @@
 </head>
 <body> %>
 
-  <div class="container-fluid main-container" style="background-color: black">
-    <div class="row justify-content-center align-items-center gap-3">
-      <div class="col" style="margin: 60px">
-        <div class="card">
-          <div class="card-header" style="background-color: black">
-            <h1 class="card-title" style="color: white"><%= @brain.title %></h1>
-          </div>
-          <div class="card-body">
-            <div class="card">
-              <div style="width: 100%; height: 100%; position: relative">
-                <% if @brain.photo.attached? %>
-                  <%= cl_image_tag @brain.photo.key, height: "auto", style: "max-width:100%" %>
-                <% end %>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title"><%= @brain.title %></h5>
-                <p class="card-text"><%= image_tag "euros.png", width:"3%"%> <%= @brain.price %> /jour</p>
-                <p class="card-text"><%= image_tag "brain.png", width:"3%"%> <%= @brain.specialty %></p>
-                <p class="card-text"><%= image_tag "home.png", width:"3%"%> <%= @brain.address %></p>
-                <p class="card-text"><strong></strong> <%= @brain.description %></p>
-                <a href="<%= @brain.wiki_page %>" style="color: black" target="_blank"><%= image_tag "wiki.png", width:"3%"%>  + d'infos</a>
-              </div>
+<div class="container-fluid main-container" style="background-color: black">
+  <div class="row justify-content-center align-items-center gap-3">
+    <div class="col" style="margin: 60px">
+      <div class="card">
+        <div class="card-header" style="background-color: black">
+          <h1 class="card-title" style="color: white"><%= @brain.title %></h1>
+        </div>
+        <div class="card-body">
+          <div class="card">
+            <div style="width: 100%; height: 100%; position: relative">
+              <% if @brain.photo.attached? %>
+                <%= cl_image_tag @brain.photo.key, height: "auto", style: "max-width:100%" %>
+              <% end %>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"><%= @brain.title %></h5>
+              <p class="card-text"><%= image_tag "euros.png", width:"3%"%> <%= @brain.price %> /jour</p>
+              <p class="card-text"><%= image_tag "brain.png", width:"3%"%> <%= @brain.specialty %></p>
+              <p class="card-text"><%= image_tag "home.png", width:"3%"%> <%= @brain.address %></p>
+              <p class="card-text"><strong></strong> <%= @brain.description %></p>
+              <a href="<%= @brain.wiki_page %>" style="color: black" target="_blank"><%= image_tag "wiki.png", width:"3%"%>  + d'infos</a>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <% unless current_user == @brain.user %>
-        <div class="col" style="padding-top: 30px">
-          <div class="card">
-            <div class="card-header" style="background-color: black">
-              <h1 class="card-title" style="color: white">Faire une réservation</h1>
+    <% unless current_user == @brain.user %>
+      <div class="col" style="padding-top: 30px">
+        <div class="reservation_container">
+          <div class="h1">Faire une réservation</div>
+          <div class="body_card_reservation">
+            <div class="card_reservation">
+              <div class = "header">
+                <div class = "title"><%= @brain.title %></div>
+                <div class = "subtitle">
+                  <div class = "field_price">
+                    <div class = "price"><%= @brain.price %>€ par jour</div>
+                  </div>
+                  <div class = "specialty">. <%= @brain.specialty %></div>
+                </div>
+              </div>
+              <div class= "card_content">
+                <%= render "reservations/form", reservation: @reservation, brain: @brain %>
+              </div>
             </div>
-            <div class="body_card_reservation">
-              <%= render "reservations/form", reservation: @reservation, brain: @brain %>
+            <div class = "legend">
+              <div class = "content">
+                <div class = "title">Safeguarded Interactions</div>
+                <div class = "supporting_text">We value your privacy and the confidentiality of your projects. Rest assured, all interactions and exchanges are protected under strict NDAs and secure channels.</div>
+              </div>
+            </div>
             </div>
           </div>
-          <div style="width: 100%; text-align: center; color: white; font-size: 18px; font-family: Inter; font-weight: 500; line-height: 30px; word-wrap: break-word">Safeguarded Interactions</div>
-          <div style="width: 100%; text-align: center; color: white; font-size: 14px; font-family: Inter; font-weight: 300; line-height: 18px; word-wrap: break-word">We value your privacy and the confidentiality of your projects. Rest assured, all interactions and exchanges are protected under strict NDAs and secure channels.</div>
         </div>
+      </div>
+    <% end %>
 
-      <% end %>
       <% if current_user == @brain.user%>
         <div class="col" style="padding-top: 30px">
           <div class="row" style="padding-right: 60px">
               <%= link_to "Voir tous mes brains", profile_path, class: "nav-link text-white" %>
               <%= link_to "Update", edit_brain_path(@brain), class: "btn btn-primary me-md-2", type: "button" %>
-             <%= link_to "Delete", brain_path(@brain), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger me-md-2", type: "button" %>
+             <%= link_to "Delete", brains_path(@brains), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger me-md-2", type: "button" %>
           </div>
         </div>
       <% end %>
