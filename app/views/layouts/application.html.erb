@@ -3,6 +3,10 @@
   <head>
     <title>RentABrainV1</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -16,9 +20,11 @@
   <body>
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
-    <p class="notice"><%= notice %></p>
+    <%# <p class="notice"><%= notice %>
     <p class="alert"><%= alert %></p>
 
     <%= yield %>
+
+    <%= render "shared/footer" %>
   </body>
 </html>

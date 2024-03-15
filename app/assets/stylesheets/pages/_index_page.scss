@@ -8,11 +8,12 @@
     text-align: center;
 
     /* text-4xl/semi-bold */
-    font-family: sans-serif;
+    font-family: Inter;
     font-size: 36px;
     font-style: normal;
     font-weight: 600;
-    line-height: 44px; /* 122.222% */
+    line-height: 44px;
+    /* 122.222% */
     margin-bottom: 48px;
   }
 
@@ -21,46 +22,30 @@
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 50px;
   }
-  h3{
+
+  h3 {
     color: var(--black, #000);
     font-family: Inter;
-    font-size: 24px;
+    font-size: 40px;
     font-style: normal;
     font-weight: 500;
     line-height: 32px;
     align-self: stretch;
   }
-  .tab_bar{
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    align-self: stretch;
-    color: var(--black, #000);
+
+  #nav-home {
+    font-size: 35px
   }
-  .about{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 32px;
-    align-self: stretch;
+
+  .footer {
+    font-size: 40px;
   }
-  .h4{
-    color: var(--black, #000);
-    font-family: Inter;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 20px;
-  }
-  .content_bar{
-    display: flex;
-    padding-top: 8px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
+
+  .no-result {
+    text-align: center;
+    font-size: 32px;
   }
 }
-
 
 #header {
   background: var(--black, #000);
@@ -68,6 +53,10 @@
 
   div {
     margin: 0px;
+  }
+
+  .container {
+    margin: auto;
   }
 
   h1 {
@@ -78,16 +67,50 @@
 
     /* text-4xl/medium */
     font-family: sans-serif;
-    font-size: 36px;
+    font-size: 44px;
     font-style: normal;
     font-weight: 500;
-    line-height: 44px; /* 122.222% */
+    line-height: 44px;
+    /* 122.222% */
+  }
+
+  .search {
+    padding: 15px;
+    form {
+      input[type="text"] {
+        border-top-left-radius: 66px;
+        border-bottom-left-radius: 66px;
+        font-family: Inter;
+        display: block;
+        width: 100%;
+        padding: 1rem 2rem;
+        font-size: 1.25em;
+        font-weight: 400;
+        color: var(--bs-body-color);
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-color: var(--bs-body-bg);
+        background-clip: padding-box;
+        border-width: 0px;
+      }
+      input[type="submit"]{
+        border-top-right-radius: 66px;
+        border-bottom-right-radius: 66px;
+        font-family: Inter;
+        border-width: 0px;
+        padding: 0rem 2rem;
+        font-size: 1.25em;
+        background: var(--Gradient-pink, radial-gradient(1413.54% 103.95% at -3.95% 100%, #D33753 0%, #D13660 52.83%, #C72D65 100%));
+      }
+
+    }
   }
 }
 
-
 #highlights {
   background: var(--black, #000);
+  padding-top: 20px;
 
   h2 {
     color: var(--white, #fff);
