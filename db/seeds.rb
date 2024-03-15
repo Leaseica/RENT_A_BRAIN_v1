@@ -88,6 +88,7 @@ brain_6 = Brain.new(
   address: 'Rådhuspladsen 1, 1553 København, Danemark',
   title: 'David Heinemeier Hansson',
   description: "David Heinemeier Hansson était un programmeur, il a développé le framework web Ruby on Rails. En 2005, il est récompensé hacker de l'année par Google et O'Reilly.",
+  wiki_page: 'https://fr.wikipedia.org/wiki/David_Heinemeier_Hansson',
   price: 300,
   user: user_1
 )
