@@ -4,12 +4,13 @@ class BrainsController < ApplicationController
       if params[:query].present?
         @brains = Brain.where("specialty ILIKE ?", "%#{params[:query]}%")
       end
-    
+
   end
 
   def show
     id = params[:id]
     @brain = Brain.find(id)
+    @reservation = Reservation.new
   end
 
   def new
