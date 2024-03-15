@@ -2,13 +2,13 @@
 <%= simple_form_for [@brain, @reservation] do |f| %>
   <div class="d-flex">
     <%= f.input :start_date, as: :date, html5: true, input_html: { value: @reservation.start_date || Date.today, data: { controller: "flatpickr calculated-cost", calculated_cost_target: "start", action: "change->calculated-cost#calculateCost" } } %>
-    <%= f.input :end_date, as: :date, html5: true, input_html: { value: @reservation.end_date || Date.today, data: { controller: "flatpickr calculated-cost", calculated_cost_target: "end", action: "change->calculated-cost#calculateCost" } } %>
+    <%= f.input :end_date, as: :date, html5: true, input_html: { data: { controller: "flatpickr calculated-cost", calculated_cost_target: "end", action: "change->calculated-cost#calculateCost" } } %>
   </div>
-  <div data-controller="calculated-cost"
-    data-calculated-cost-price-value="<%= @brain.price %>"
-    id="cost">
-    <p>Total Cost: <span data-calculated-cost-target="cost">$0</span></p>
+  <div id="cost">00</div>
+    <div>
+    <p>Total Cost: <span data-calculated-cost-price-value="<%= @brain.price %>"><%= @brain.price %> </span></p>
   </div>
+
 
 
   <div style="width: 100%; height: 100%; padding-left: 15px; padding-right: 15px; padding-top: 10px; padding-bottom: 10px; background: radial-gradient(48.10% 3.54% at 48.10% 1.96%, #D33753 0%, #D13660 53%, #C72D65 100%); border-radius: 5px; border: 1px rgba(0, 0, 0, 0.12) solid; justify-content: center; align-items: center; gap: 10px; display: inline-flex">

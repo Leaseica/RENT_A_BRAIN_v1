@@ -3,26 +3,27 @@
 import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
-  static targets = ["start", "end"];
+  static targets = ["end", "start"];
   static values = { price: Number }
   connect() {
     window.calculateCostTest = this.calculateCost.bind(this);
-    flatpickr(this.element)
+    console.log(this.element)
+    console.log(this.startTarget)
+    this.calculateCost();
+
   }
 
   calculateCost() {
     console.log("Calculating cost...");
+    const startDate = new Date(this.startTarget.value);
+    const endDate = newDate(this.endTarget.value);
+    console.log(endDate - startDate )
+    const dayCount = ((endDate - startDate) / (1000 * 60 * 60 * 24)) + 1; ;
+    console.log("Calculating cost...");
+    const totalCost = this.priceValue * dayCount;
+    document.getElementById("cost").textContent = `1${totalCost}`;
+    console.log(`$${totalCost.toFixed(2)}`);
 
-    let startDate = new Date(this.startTarget.value);
-    let endDate = new Date(this.endTarget.value);
 
-    if (!isNaN(startDate.getTime()) && !isNaN(endDate.getTime())) {
-      const dayCount = (endDate - startDate) / (1000 * 60 * 60 * 24) + 1; // Make sure to handle edge cases as needed
-      const totalCost = this.priceValue * dayCount;
-      document.getElementById("cost").textContent = `$${totalCost.toFixed(2)}`;
-
-
-      console.log(`$${totalCost.toFixed(2)}`);
-    }
   }
 }

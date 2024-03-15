@@ -11,8 +11,11 @@
     <p><strong>Address:</strong> <%= @reservation.brain.address %></p>
     <p><strong>Status:</strong> <%= @reservation.status ? 'Accepted' : 'Pending' %></p>
     <% if @reservation.brain.wiki_page.present? %>
-      <p><strong>Wiki Page:</strong> <%= link_to "View on Wikipedia", @reservation.brain.wiki_page, target: "_blank", rel: "noopener" %></p>
+    <div style="width: 100%; height: 100%; justify-content: flex-start; align-items: center; gap: 10px; display: inline-flex">
+      <p><%= link_to "View on Wikipedia", @reservation.brain.wiki_page, target: "_blank", class: "btn-pink" %></p>
+    </div>
     <% end %>
+
   </div>
   <%= link_to 'Back to brain', brain_path(@reservation.brain), class: 'btn btn-secondary' %>
 
